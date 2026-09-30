@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-// Main site: https://haphan.digital (domain bought at Namecheap, deployed on Vercel).
-// Static output: Vercel serves it as-is, so no adapter is needed. DNS and secrets are configured outside this repo.
+// Published to the GitHub Pages user site: https://haphanhp.github.io (repo haphanhp/haphanhp.github.io).
+// Static output: copy the contents of dist/ to the root of that repo (see README-SITE in the PR).
 export default defineConfig({
-  site: 'https://haphan.digital',
+  site: 'https://haphanhp.github.io',
   output: 'static',
   redirects: { '/': '/projects/' },
 });

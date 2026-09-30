@@ -17,4 +17,4 @@
 | **Notes** | Collected resources and useful information I have gathered and put together. | [Live](https://notes.haphan.digital/) | [GitHub](https://github.com/haphanhp/publish) (private) |
 | **Places** | Manage places and itineraries, connected to the Google Maps APIs. Currently building. | In progress | [GitHub](https://github.com/haphanhp/places) (private) |
 
-<sub>📍 Saigon · [All projects](https://haphan.digital/projects/) · [Stack](https://haphan.digital/stack/)</sub>
+<sub>📍 Saigon · [All projects](https://haphanhp.github.io/projects/) · [Stack](https://haphanhp.github.io/stack/)</sub>

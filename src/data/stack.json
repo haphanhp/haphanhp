@@ -70,7 +70,7 @@
         "slug": "astro",
         "icon": "🚀",
         "name": "Astro",
-        "how": "Grows this site from Markdown files, one small page at a time.",
+        "how": "Builds small static pages from Markdown files, one page at a time.",
         "url": "https://astro.build",
         "confirm": false,
         "source": "user list"

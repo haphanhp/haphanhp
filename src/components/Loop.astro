@@ -8,18 +8,24 @@ const chain = [
   { icon: '✅', name: 'ClickUp', sub: 'tasks' },
 ];
 const hops = ['talks through', 'reaches', 'syncs with'];
-const side = { icon: '🧭', name: '9Router', sub: 'one endpoint, any model', hop: 'model calls' };
+// the AI side: a separate lane, not part of the n8n chain
+const ai = [
+  { icon: '🛰️', name: 'Cline', sub: 'in VS Code' },
+  { icon: '🧭', name: '9Router', sub: 'one endpoint' },
+  { icon: '🧠', name: 'Many models', sub: 'quota hops' },
+];
+const aiHops = ['runs through', 'reaches'];
 const r = 34;
 
 // wide layout
-const W = { w: 780, h: 320, xs: [90, 290, 490, 690], y: 100 };
+const W = { w: 780, h: 380, xs: [90, 290, 490, 690], y: 100, ay: 290, axs: [90, 290, 490] };
 // narrow layout
-const N = { w: 360, h: 640, x: 110, ys: [60, 210, 360, 510] };
+const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 180, 300] };
 ---
 <section class="loop" aria-labelledby="fit">
   <h2 id="fit">🔄 How these fit together</h2>
   <figure>
-    <svg class="wide" viewBox={`0 0 ${W.w} ${W.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. 9Router sits beside the AI calls.">
+    <svg class="wide" viewBox={`0 0 ${W.w} ${W.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. Separately, Cline in VS Code runs through 9Router to reach many models.">
       <defs>
         <marker id="arrow-w" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" /></marker>
       </defs>
@@ -37,17 +43,24 @@ const N = { w: 360, h: 640, x: 110, ys: [60, 210, 360, 510] };
           <text class="sub" x={W.xs[i]} y={W.y + r + 40}>{n.sub}</text>
         </g>
       ))}
-      <path class="edge" d={`M ${W.xs[2]} ${W.y + r + 50} L ${W.xs[2]} ${W.y + 122}`} marker-end="url(#arrow-w)" />
-      <text class="verb" x={W.xs[2] + 12} y={W.y + 100} style="text-anchor:start">{side.hop}</text>
-      <g class="n">
-        <circle class="node" cx={W.xs[2]} cy={W.y + 160} r={r} />
-        <text x={W.xs[2]} y={W.y + 168} text-anchor="middle" font-size="24">{side.icon}</text>
-        <text class="lbl" x={W.xs[2] + r + 14} y={W.y + 158} style="text-anchor:start">{side.name}</text>
-        <text class="sub" x={W.xs[2] + r + 14} y={W.y + 176} style="text-anchor:start">{side.sub}</text>
-      </g>
+      <text class="lane" x="20" y={W.ay - 58}>the AI side</text>
+      {aiHops.map((h, i) => (
+        <g>
+          <path class="edge draw" d={`M ${W.axs[i] + r + 6} ${W.ay} L ${W.axs[i + 1] - r - 10} ${W.ay}`} marker-end="url(#arrow-w)" />
+          <text class="verb" x={(W.axs[i] + W.axs[i + 1]) / 2} y={W.ay - 12}>{h}</text>
+        </g>
+      ))}
+      {ai.map((n, i) => (
+        <g class="n">
+          <circle class="node" cx={W.axs[i]} cy={W.ay} r={r} />
+          <text x={W.axs[i]} y={W.ay + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <text class="lbl" x={W.axs[i]} y={W.ay + r + 22}>{n.name}</text>
+          <text class="sub" x={W.axs[i]} y={W.ay + r + 40}>{n.sub}</text>
+        </g>
+      ))}
     </svg>
 
-    <svg class="narrow" viewBox={`0 0 ${N.w} ${N.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. 9Router sits beside the AI calls.">
+    <svg class="narrow" viewBox={`0 0 ${N.w} ${N.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. Separately, Cline in VS Code runs through 9Router to reach many models.">
       <defs>
         <marker id="arrow-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" /></marker>
       </defs>
@@ -65,15 +78,19 @@ const N = { w: 360, h: 640, x: 110, ys: [60, 210, 360, 510] };
           <text class="sub" x={N.x} y={N.ys[i] + r + 36}>{n.sub}</text>
         </g>
       ))}
-      <path class="edge" d={`M ${N.x + r + 6} ${N.ys[2]} L ${N.x + 132} ${N.ys[2]}`} marker-end="url(#arrow-n)" />
-      <text class="verb" x={N.x + 88} y={N.ys[2] - 10}>{side.hop}</text>
-      <g class="n">
-        <circle class="node" cx={N.x + 172} cy={N.ys[2]} r={r} />
-        <text x={N.x + 172} y={N.ys[2] + 8} text-anchor="middle" font-size="24">{side.icon}</text>
-        <text class="lbl" x={N.x + 172} y={N.ys[2] + r + 20}>{side.name}</text>
-        <text class="sub" x={N.x + 172} y={N.ys[2] + r + 36}>one endpoint</text>
-      </g>
+      <text class="lane" x="16" y={N.ay - 52}>the AI side</text>
+      {aiHops.map((h, i) => (
+        <path class="edge draw" d={`M ${N.axs[i] + r + 4} ${N.ay} L ${N.axs[i + 1] - r - 8} ${N.ay}`} marker-end="url(#arrow-n)" />
+      ))}
+      {ai.map((n, i) => (
+        <g class="n">
+          <circle class="node" cx={N.axs[i]} cy={N.ay} r={r - 4} />
+          <text x={N.axs[i]} y={N.ay + 8} text-anchor="middle" font-size="22">{n.icon}</text>
+          <text class="lbl" x={N.axs[i]} y={N.ay + r + 16}>{n.name}</text>
+          <text class="sub" x={N.axs[i]} y={N.ay + r + 32}>{n.sub}</text>
+        </g>
+      ))}
     </svg>
-    <figcaption>Obsidian talks to n8n on my VPS through a private Tailscale tunnel, and n8n keeps ClickUp in sync. 9Router sits beside the AI calls. (My own sketch, not a formal architecture.)</figcaption>
+    <figcaption>Obsidian talks to n8n on my VPS through a private Tailscale tunnel, and n8n keeps ClickUp in sync. On the AI side, Cline in VS Code runs through 9Router to reach many models. (My own sketch, not a formal architecture.)</figcaption>
   </figure>
 </section>

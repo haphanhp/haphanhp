@@ -7,19 +7,19 @@
         "slug": "claude-code",
         "icon": "🤖",
         "name": "Claude Code",
-        "how": "My pair-programmer who never sleeps, which is fine, because I mostly do not either.",
+        "how": "The strategist: it thinks about the big picture and plans the next move while I nod wisely.",
         "url": "https://claude.com/claude-code",
         "confirm": false,
-        "source": "user list"
+        "source": "owner message: strategist role"
       },
       {
         "slug": "cline",
         "icon": "🛰️",
         "name": "Cline",
-        "how": "The VS Code sidekick I send to poke around a codebase before I break something myself.",
+        "how": "The muscle-bound builder inside VS Code: hunts through folders, edits files and tidies up the mess while I supervise.",
         "url": "https://cline.bot",
         "confirm": false,
-        "source": "user list"
+        "source": "owner message: muscle role"
       },
       {
         "slug": "cursor",
@@ -40,9 +40,10 @@
         "slug": "9router",
         "icon": "🧭",
         "name": "9Router",
-        "how": "One endpoint for every model. When a quota runs out it hops to a cheaper model on its own, so I never re-wire each tool.",
+        "how": "One endpoint that keeps Cline running on many models, completely free, so I get more done without watching the meter.",
         "confirm": false,
-        "source": "user list + description (no official URL provided)"
+        "source": "owner message + URL",
+        "url": "https://github.com/decolua/9router"
       }
     ]
   },

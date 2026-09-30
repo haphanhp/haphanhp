@@ -105,6 +105,7 @@ tr.unconfirmed td { outline: 1px dashed var(--rose-deep); outline-offset: -3px; 
 .loop .node { fill: var(--sage); stroke: var(--sage-deep); stroke-width: 1.5; transition: fill 0.2s; }
 .loop g.n:hover .node { fill: var(--rose); }
 .loop .lbl { fill: var(--ink); font-family: var(--mono); font-size: 13px; text-anchor: middle; }
+.loop .lane { fill: var(--rose-deep); font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
 .loop .sub { fill: var(--muted); font-family: var(--mono); font-size: 11px; text-anchor: middle; }
 .loop svg.narrow { display: none; }
 @media (max-width: 640px) { .loop svg.wide { display: none; } .loop svg.narrow { display: block; max-width: 360px; margin: 0 auto; } }

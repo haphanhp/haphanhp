@@ -63,7 +63,7 @@
         "url": "https://code.visualstudio.com",
         "confirm": false,
         "source": "confirmed by owner",
-        "logo": "/logos/vscode.png"
+        "logo": "/logos/vscode.svg"
       }
     ]
   },

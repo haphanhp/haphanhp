@@ -6,6 +6,7 @@ const { title, description = 'Small, cozy things, slowly growing.' } = Astro.pro
 // Only show nav items whose page exists.
 const existing = Object.keys(import.meta.glob('/src/pages/*.astro')).map((p) => p.split('/').pop()!.replace('.astro', ''));
 const nav = [
+  { slug: 'index', label: 'Home', href: '/' },
   { slug: 'writing', label: 'Writing' },
   { slug: 'projects', label: 'Projects' },
   { slug: 'stack', label: 'Stack' },
@@ -39,7 +40,7 @@ const path = Astro.url.pathname;
       <div class="header-right">
         <nav aria-label="Main">
           {nav.map((n) => (
-            <a href={`/${n.slug}/`} aria-current={path.startsWith(`/${n.slug}`) ? 'page' : undefined}>{n.label}</a>
+            <a href={n.href ?? `/${n.slug}/`} aria-current={(n.href ? path === n.href : path.startsWith(`/${n.slug}`)) ? 'page' : undefined}>{n.label}</a>
           ))}
         </nav>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light / dark mode">

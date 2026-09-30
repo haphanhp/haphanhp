@@ -21,17 +21,49 @@ const path = Astro.url.pathname;
     <title>{title} · haphan</title>
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      (function () {
+        try {
+          var t = null;
+          try { t = localStorage.getItem("theme"); } catch (e) {}
+          if (t !== "light" && t !== "dark") t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="https://haphan.digital" rel="noopener" title="haphan.digital"><span class="sprout" aria-hidden="true">🌱</span> haphan</a>
-      <nav aria-label="Main">
-        {nav.map((n) => (
-          <a href={`/${n.slug}/`} aria-current={path.startsWith(`/${n.slug}`) ? 'page' : undefined}>{n.label}</a>
-        ))}
-      </nav>
+      <div class="header-right">
+        <nav aria-label="Main">
+          {nav.map((n) => (
+            <a href={`/${n.slug}/`} aria-current={path.startsWith(`/${n.slug}`) ? 'page' : undefined}>{n.label}</a>
+          ))}
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light / dark mode">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7L7 17M17 7l1.7-1.7"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+        </button>
+      </div>
     </header>
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById("theme-toggle");
+        function current() {
+          var t = root.getAttribute("data-theme");
+          if (t) return t;
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        btn.addEventListener("click", function () {
+          var next = current() === "dark" ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+        });
+      })();
+    </script>
     <main>
       <slot />
     </main>

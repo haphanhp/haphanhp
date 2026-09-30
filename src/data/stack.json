@@ -29,8 +29,8 @@
         "name": "Cursor",
         "how": "Still on a first date with it, mostly to see if it keeps a project's context tidy.",
         "url": "https://cursor.com",
-        "confirm": true,
-        "source": "vault note: trial only",
+        "confirm": false,
+        "source": "confirmed by owner",
         "logo": "/logos/cursor.svg"
       }
     ]
@@ -61,8 +61,9 @@
         "name": "VS Code",
         "how": "Where I edit code and config files.",
         "url": "https://code.visualstudio.com",
-        "confirm": true,
-        "source": "only seen as a taskbar icon; not in the new list"
+        "confirm": false,
+        "source": "confirmed by owner",
+        "logo": "/logos/vscode.png"
       }
     ]
   },
@@ -270,8 +271,8 @@
         "name": "Lovable",
         "how": "Where I sketch a first version of an interface before refining it.",
         "url": "https://lovable.dev",
-        "confirm": true,
-        "source": "vault note only",
+        "confirm": false,
+        "source": "confirmed by owner",
         "logo": "/logos/lovable.svg"
       }
     ]

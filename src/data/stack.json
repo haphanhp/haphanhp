@@ -1,0 +1,235 @@
+[
+  {
+    "group": "Coding agents",
+    "icon": "🤖",
+    "items": [
+      {
+        "slug": "claude-code",
+        "icon": "🤖",
+        "name": "Claude Code",
+        "how": "My main pair-programmer: it builds, tests and pushes changes to my repos while I steer.",
+        "url": "https://claude.com/claude-code",
+        "confirm": false,
+        "source": "commits co-authored by Claude in the vault repo"
+      },
+      {
+        "slug": "cursor",
+        "icon": "⌨️",
+        "name": "Cursor",
+        "how": "Something I am trying out for keeping a project's context in one place.",
+        "url": "https://cursor.com",
+        "confirm": true,
+        "source": "vault note: 'thử cursor để quản ngữ cảnh' (trial only)"
+      }
+    ]
+  },
+  {
+    "group": "Editors & terminal",
+    "icon": "🖥️",
+    "items": [
+      {
+        "slug": "vscode",
+        "icon": "🖥️",
+        "name": "VS Code",
+        "how": "Where I edit code and config files.",
+        "url": "https://code.visualstudio.com",
+        "confirm": true,
+        "source": "only seen as a taskbar icon in a screenshot"
+      }
+    ]
+  },
+  {
+    "group": "Languages & frameworks",
+    "icon": "🧩",
+    "items": [
+      {
+        "slug": "javascript",
+        "icon": "🟨",
+        "name": "JavaScript",
+        "how": "Small scripts and web apps, plain unless a framework really earns its place.",
+        "confirm": false,
+        "source": "projects and speech-to-text repos"
+      },
+      {
+        "slug": "vite",
+        "icon": "⚡",
+        "name": "Vite",
+        "how": "Bundles the dashboard that shows my projects.",
+        "url": "https://vite.dev",
+        "confirm": false,
+        "source": "projects repo package.json"
+      },
+      {
+        "slug": "astro",
+        "icon": "🚀",
+        "name": "Astro",
+        "how": "Builds this site from Markdown files.",
+        "url": "https://astro.build",
+        "confirm": false,
+        "source": "this site"
+      },
+      {
+        "slug": "autohotkey",
+        "icon": "🎹",
+        "name": "AutoHotkey",
+        "how": "Hotkeys and text shortcuts that keep my hands on the keyboard.",
+        "url": "https://www.autohotkey.com",
+        "confirm": false,
+        "source": "shortcuttype.ahk screenshot; noi-ra-chu.ahk"
+      }
+    ]
+  },
+  {
+    "group": "Hosting & delivery",
+    "icon": "🚚",
+    "items": [
+      {
+        "slug": "github",
+        "icon": "🐙",
+        "name": "GitHub",
+        "how": "Home of every repo, plus Actions that sync my notes into dashboards.",
+        "url": "https://github.com",
+        "confirm": false,
+        "source": "repos and workflows"
+      },
+      {
+        "slug": "netlify",
+        "icon": "🌐",
+        "name": "Netlify",
+        "how": "Hosts my projects dashboard and its small functions.",
+        "url": "https://www.netlify.com",
+        "confirm": false,
+        "source": "site ha-projects"
+      },
+      {
+        "slug": "vercel",
+        "icon": "▲",
+        "name": "Vercel",
+        "how": "Hosts Nói ra chữ and Vượt Qua.",
+        "url": "https://vercel.com",
+        "confirm": false,
+        "source": "*.vercel.app URLs"
+      },
+      {
+        "slug": "n8n",
+        "icon": "🔗",
+        "name": "n8n",
+        "how": "Self-hosted on my own server to automate the repetitive parts.",
+        "url": "https://n8n.io",
+        "confirm": false,
+        "source": "n8n.haphan.digital and n8n-* repos; placed here because no 'Automation' group was specified"
+      }
+    ]
+  },
+  {
+    "group": "Data & storage",
+    "icon": "🗄️",
+    "items": [
+      {
+        "slug": "markdown-git",
+        "icon": "📝",
+        "name": "Markdown + Git",
+        "how": "Most of my data is plain files in repositories.",
+        "confirm": false,
+        "source": "all repos"
+      },
+      {
+        "slug": "sheets-calendar",
+        "icon": "📊",
+        "name": "Google Sheets & Calendar",
+        "how": "My schedule syncs between a sheet and my calendar.",
+        "confirm": false,
+        "source": "projects repo workflows"
+      },
+      {
+        "slug": "netlify-blobs",
+        "icon": "🫙",
+        "name": "Netlify Blobs",
+        "how": "Remembers the state of my dashboard's kanban board.",
+        "confirm": false,
+        "source": "projects repo @netlify/blobs"
+      },
+      {
+        "slug": "supabase",
+        "icon": "🗄️",
+        "name": "Supabase",
+        "how": "The backend I picked for my next apps.",
+        "url": "https://supabase.com",
+        "confirm": true,
+        "source": "vault note only; nothing built yet"
+      }
+    ]
+  },
+  {
+    "group": "Design & content",
+    "icon": "🎨",
+    "items": [
+      {
+        "slug": "lovable",
+        "icon": "💗",
+        "name": "Lovable",
+        "how": "Where I sketch a first version of an interface before refining it.",
+        "url": "https://lovable.dev",
+        "confirm": true,
+        "source": "vault note 'Lovable UI' (decision, not verified as used)"
+      }
+    ]
+  },
+  {
+    "group": "Notes & knowledge",
+    "icon": "📚",
+    "items": [
+      {
+        "slug": "obsidian",
+        "icon": "🔮",
+        "name": "Obsidian",
+        "how": "My vault of research notes, tagged and linked.",
+        "url": "https://obsidian.md",
+        "confirm": false,
+        "source": "vault repo"
+      },
+      {
+        "slug": "obsidian-git",
+        "icon": "🔁",
+        "name": "Obsidian Git",
+        "how": "Commits and pushes the vault so my dashboards stay fresh.",
+        "url": "https://github.com/Vinzent03/obsidian-git",
+        "confirm": false,
+        "source": "plugin settings screenshot"
+      },
+      {
+        "slug": "digital-garden",
+        "icon": "🪴",
+        "name": "Digital Garden",
+        "how": "Where notes that are ready enough get published to grow in public.",
+        "url": "https://garden.haphan.digital/",
+        "confirm": false,
+        "source": "garden.haphan.digital"
+      }
+    ]
+  },
+  {
+    "group": "Tools I built",
+    "icon": "🛠️",
+    "items": [
+      {
+        "slug": "noi-ra-chu",
+        "icon": "🎤",
+        "name": "Nói ra chữ",
+        "how": "Dictate Vietnamese and paste the text anywhere.",
+        "url": "https://speech-to-text-iota-black.vercel.app/",
+        "confirm": false,
+        "source": "speech-to-text repo"
+      },
+      {
+        "slug": "project-dashboard",
+        "icon": "📈",
+        "name": "Project dashboard",
+        "how": "Turns my project notes into progress bars and an activity heatmap.",
+        "url": "https://projects.haphan.digital/",
+        "confirm": false,
+        "source": "projects repo"
+      }
+    ]
+  }
+]

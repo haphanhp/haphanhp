@@ -1,0 +1,57 @@
+---
+// A simple sketch of how the projects feed each other, drawn as an inline SVG loop.
+// Edit `nodes` to change the story. Colours come from CSS variables, so dark mode just works.
+const nodes = [
+  { icon: '🎤', name: 'Nói ra chữ', verb: 'speak' },
+  { icon: '🧠', name: '2ndbrain', verb: 'keep' },
+  { icon: '🪴', name: 'Digital Garden', verb: 'grow' },
+  { icon: '📒', name: 'Notes', verb: 'share' },
+  { icon: '🌙', name: 'Vượt Qua', verb: 'rest' },
+];
+const cx = 300, cy = 190, R = 128, r = 30;
+const pts = nodes.map((n, i) => {
+  const a = (-90 + (360 / nodes.length) * i) * (Math.PI / 180);
+  return { ...n, x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
+});
+// curved edge from node i to i+1, trimmed so arrows stop at the circle edge
+const edges = pts.map((p, i) => {
+  const q = pts[(i + 1) % pts.length];
+  const dx = q.x - p.x, dy = q.y - p.y, d = Math.hypot(dx, dy);
+  const ux = dx / d, uy = dy / d;
+  const sx = p.x + ux * (r + 4), sy = p.y + uy * (r + 4);
+  const ex = q.x - ux * (r + 8), ey = q.y - uy * (r + 8);
+  const mx = (sx + ex) / 2 + (cx - (sx + ex) / 2) * -0.0, my = (sy + ey) / 2;
+  const nx = -uy, ny = ux; // bulge outward from the centre
+  const out = Math.sign((mx - cx) * nx + (my - cy) * ny) || 1;
+  const bx = mx + nx * 14 * out, by = my + ny * 14 * out;
+  const vx = mx + (cx - mx) * 0.16, vy = my + (cy - my) * 0.16 + 4;
+  return { vx, vy, d: `M ${sx.toFixed(1)} ${sy.toFixed(1)} Q ${bx.toFixed(1)} ${by.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}`, lx: bx, ly: by, verb: p.verb };
+});
+---
+<section class="loop" aria-labelledby="fit">
+  <h2 id="fit">🔄 How these fit together</h2>
+  <figure>
+    <svg viewBox="0 0 600 400" role="img" aria-label="A loop: Nói ra chữ, 2ndbrain, Digital Garden, Notes, Vượt Qua, and back to Nói ra chữ">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" />
+        </marker>
+      </defs>
+      {edges.map((e) => <path class="edge draw" d={e.d} marker-end="url(#arrow)" />)}
+      {pts.map((p) => {
+        const ox = Math.cos(p.a), oy = Math.sin(p.a);
+        const anchor = ox > 0.3 ? 'start' : ox < -0.3 ? 'end' : 'middle';
+        return (
+          <g class="n">
+            <circle class="node" cx={p.x} cy={p.y} r={r} />
+            <text x={p.x} y={p.y + 7} text-anchor="middle" font-size="22">{p.icon}</text>
+            <text class="lbl" x={p.x + ox * (r + 10)} y={p.y + oy * (r + 10) + (oy < -0.3 ? -4 : oy > 0.3 ? 14 : 4)} style={`text-anchor:${anchor}`}>{p.name}</text>
+          </g>
+        );
+      })}
+      {edges.map((e) => <text class="verb" x={e.vx} y={e.vy}>{e.verb}</text>)}
+      <text class="lbl" x={cx} y={cy + 4} style="opacity:.7">slowly growing</text>
+    </svg>
+    <figcaption>Speak it, keep it, grow it, share it, rest, and start again. (My own sketch of the loop, not a formal architecture.)</figcaption>
+  </figure>
+</section>

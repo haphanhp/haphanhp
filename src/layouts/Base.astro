@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string }
+const { title, description = 'Small, cozy things, slowly growing.' } = Astro.props;
+
+// Only show nav items whose page exists.
+const existing = Object.keys(import.meta.glob('/src/pages/*.astro')).map((p) => p.split('/').pop()!.replace('.astro', ''));
+const nav = [
+  { slug: 'writing', label: 'Writing' },
+  { slug: 'projects', label: 'Projects' },
+  { slug: 'stack', label: 'Stack' },
+  { slug: 'about', label: 'About' },
+].filter((n) => existing.includes(n.slug));
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · haphan</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/projects/"><span class="sprout" aria-hidden="true">🌱</span> haphan</a>
+      <nav aria-label="Main">
+        {nav.map((n) => (
+          <a href={`/${n.slug}/`} aria-current={path.startsWith(`/${n.slug}`) ? 'page' : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <span>Sprout in the server room · built with Astro · slowly growing 🌿</span>
+    </footer>
+  </body>
+</html>

@@ -7,19 +7,42 @@
         "slug": "claude-code",
         "icon": "🤖",
         "name": "Claude Code",
-        "how": "My main pair-programmer: it builds, tests and pushes changes to my repos while I steer.",
+        "how": "My pair-programmer who never sleeps, which is fine, because I mostly do not either.",
         "url": "https://claude.com/claude-code",
         "confirm": false,
-        "source": "commits co-authored by Claude in the vault repo"
+        "source": "user list"
+      },
+      {
+        "slug": "cline",
+        "icon": "🛰️",
+        "name": "Cline",
+        "how": "The VS Code sidekick I send to poke around a codebase before I break something myself.",
+        "url": "https://cline.bot",
+        "confirm": false,
+        "source": "user list"
       },
       {
         "slug": "cursor",
         "icon": "⌨️",
         "name": "Cursor",
-        "how": "Something I am trying out for keeping a project's context in one place.",
+        "how": "Still on a first date with it, mostly to see if it keeps a project's context tidy.",
         "url": "https://cursor.com",
         "confirm": true,
-        "source": "vault note: 'thử cursor để quản ngữ cảnh' (trial only)"
+        "source": "vault note: trial only"
+      }
+    ]
+  },
+  {
+    "group": "AI routing",
+    "icon": "🚦",
+    "items": [
+      {
+        "slug": "9router",
+        "icon": "🧭",
+        "name": "9Router",
+        "how": "One endpoint for every model. When a quota runs out it hops to a cheaper model on its own, so I never re-wire each tool.",
+        "confirm": false,
+        "source": "user list + description (no official URL provided)"
       }
     ]
   },
@@ -34,7 +57,7 @@
         "how": "Where I edit code and config files.",
         "url": "https://code.visualstudio.com",
         "confirm": true,
-        "source": "only seen as a taskbar icon in a screenshot"
+        "source": "only seen as a taskbar icon; not in the new list"
       }
     ]
   },
@@ -43,39 +66,78 @@
     "icon": "🧩",
     "items": [
       {
-        "slug": "javascript",
-        "icon": "🟨",
-        "name": "JavaScript",
-        "how": "Small scripts and web apps, plain unless a framework really earns its place.",
-        "confirm": false,
-        "source": "projects and speech-to-text repos"
-      },
-      {
-        "slug": "vite",
-        "icon": "⚡",
-        "name": "Vite",
-        "how": "Bundles the dashboard that shows my projects.",
-        "url": "https://vite.dev",
-        "confirm": false,
-        "source": "projects repo package.json"
-      },
-      {
         "slug": "astro",
         "icon": "🚀",
         "name": "Astro",
-        "how": "Builds this site from Markdown files.",
+        "how": "Grows this site from Markdown files, one small page at a time.",
         "url": "https://astro.build",
         "confirm": false,
-        "source": "this site"
+        "source": "user list"
+      }
+    ]
+  },
+  {
+    "group": "Notes & knowledge",
+    "icon": "📚",
+    "items": [
+      {
+        "slug": "obsidian",
+        "icon": "🔮",
+        "name": "Obsidian",
+        "how": "Home of my vault: thousands of notes, tagged, linked and only slightly overgrown.",
+        "url": "https://obsidian.md",
+        "confirm": false,
+        "source": "user list"
       },
       {
-        "slug": "autohotkey",
-        "icon": "🎹",
-        "name": "AutoHotkey",
-        "how": "Hotkeys and text shortcuts that keep my hands on the keyboard.",
-        "url": "https://www.autohotkey.com",
+        "slug": "quartz",
+        "icon": "🌿",
+        "name": "Quartz",
+        "how": "Turns part of the vault into 2ndbrain, so my second brain gets a front door.",
+        "url": "https://quartz.jzhao.xyz",
         "confirm": false,
-        "source": "shortcuttype.ahk screenshot; noi-ra-chu.ahk"
+        "source": "user list (2ndbrain)"
+      },
+      {
+        "slug": "eleventy",
+        "icon": "🪴",
+        "name": "Eleventy",
+        "how": "Waters the Digital Garden: plain files go in, tidy pages come out.",
+        "url": "https://www.11ty.dev",
+        "confirm": false,
+        "source": "user list (Digital Garden)"
+      }
+    ]
+  },
+  {
+    "group": "Automation",
+    "icon": "⚙️",
+    "items": [
+      {
+        "slug": "n8n",
+        "icon": "🔗",
+        "name": "n8n",
+        "how": "Self-hosted on a VPS with Docker, quietly doing the chores while I pretend to be productive.",
+        "url": "https://n8n.io",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "google-cloud",
+        "icon": "☁️",
+        "name": "Google Cloud",
+        "how": "The cloud I visit when my laptop needs a break.",
+        "url": "https://cloud.google.com",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "vm",
+        "icon": "🖲️",
+        "name": "VM",
+        "how": "A small always-on machine that keeps the workflows awake.",
+        "confirm": false,
+        "source": "user list ('VM'); assumed to be the VPS/GCP VM"
       }
     ]
   },
@@ -84,40 +146,40 @@
     "icon": "🚚",
     "items": [
       {
-        "slug": "github",
-        "icon": "🐙",
-        "name": "GitHub",
-        "how": "Home of every repo, plus Actions that sync my notes into dashboards.",
-        "url": "https://github.com",
+        "slug": "vercel",
+        "icon": "▲",
+        "name": "Vercel",
+        "how": "Ships my small apps and this site with one push and no ceremony.",
+        "url": "https://vercel.com",
         "confirm": false,
-        "source": "repos and workflows"
+        "source": "user list"
       },
       {
         "slug": "netlify",
         "icon": "🌐",
         "name": "Netlify",
-        "how": "Hosts my projects dashboard and its small functions.",
+        "how": "Ships the projects dashboard and its little functions, so the heatmap can bloom.",
         "url": "https://www.netlify.com",
         "confirm": false,
-        "source": "site ha-projects"
+        "source": "user list"
       },
       {
-        "slug": "vercel",
-        "icon": "▲",
-        "name": "Vercel",
-        "how": "Hosts Nói ra chữ and Vượt Qua.",
-        "url": "https://vercel.com",
+        "slug": "github-pages",
+        "icon": "📄",
+        "name": "GitHub Pages",
+        "how": "The no-fuss static host for pages that just want to exist.",
+        "url": "https://pages.github.com",
         "confirm": false,
-        "source": "*.vercel.app URLs"
+        "source": "user list"
       },
       {
-        "slug": "n8n",
-        "icon": "🔗",
-        "name": "n8n",
-        "how": "Self-hosted on my own server to automate the repetitive parts.",
-        "url": "https://n8n.io",
+        "slug": "namecheap",
+        "icon": "🏷️",
+        "name": "Namecheap",
+        "how": "Where I bought haphan.digital, the address of the whole garden.",
+        "url": "https://www.namecheap.com",
         "confirm": false,
-        "source": "n8n.haphan.digital and n8n-* repos; placed here because no 'Automation' group was specified"
+        "source": "user list"
       }
     ]
   },
@@ -126,37 +188,13 @@
     "icon": "🗄️",
     "items": [
       {
-        "slug": "markdown-git",
-        "icon": "📝",
-        "name": "Markdown + Git",
-        "how": "Most of my data is plain files in repositories.",
-        "confirm": false,
-        "source": "all repos"
-      },
-      {
-        "slug": "sheets-calendar",
-        "icon": "📊",
-        "name": "Google Sheets & Calendar",
-        "how": "My schedule syncs between a sheet and my calendar.",
-        "confirm": false,
-        "source": "projects repo workflows"
-      },
-      {
-        "slug": "netlify-blobs",
-        "icon": "🫙",
-        "name": "Netlify Blobs",
-        "how": "Remembers the state of my dashboard's kanban board.",
-        "confirm": false,
-        "source": "projects repo @netlify/blobs"
-      },
-      {
         "slug": "supabase",
         "icon": "🗄️",
         "name": "Supabase",
-        "how": "The backend I picked for my next apps.",
+        "how": "My pick for the backend when a small app needs a database.",
         "url": "https://supabase.com",
-        "confirm": true,
-        "source": "vault note only; nothing built yet"
+        "confirm": false,
+        "source": "user list"
       }
     ]
   },
@@ -171,40 +209,7 @@
         "how": "Where I sketch a first version of an interface before refining it.",
         "url": "https://lovable.dev",
         "confirm": true,
-        "source": "vault note 'Lovable UI' (decision, not verified as used)"
-      }
-    ]
-  },
-  {
-    "group": "Notes & knowledge",
-    "icon": "📚",
-    "items": [
-      {
-        "slug": "obsidian",
-        "icon": "🔮",
-        "name": "Obsidian",
-        "how": "My vault of research notes, tagged and linked.",
-        "url": "https://obsidian.md",
-        "confirm": false,
-        "source": "vault repo"
-      },
-      {
-        "slug": "obsidian-git",
-        "icon": "🔁",
-        "name": "Obsidian Git",
-        "how": "Commits and pushes the vault so my dashboards stay fresh.",
-        "url": "https://github.com/Vinzent03/obsidian-git",
-        "confirm": false,
-        "source": "plugin settings screenshot"
-      },
-      {
-        "slug": "digital-garden",
-        "icon": "🪴",
-        "name": "Digital Garden",
-        "how": "Where notes that are ready enough get published to grow in public.",
-        "url": "https://garden.haphan.digital/",
-        "confirm": false,
-        "source": "garden.haphan.digital"
+        "source": "vault note only"
       }
     ]
   },
@@ -219,7 +224,7 @@
         "how": "Dictate Vietnamese and paste the text anywhere.",
         "url": "https://speech-to-text-iota-black.vercel.app/",
         "confirm": false,
-        "source": "speech-to-text repo"
+        "source": "speech-to-text repo (kept from v1, not in new list)"
       },
       {
         "slug": "project-dashboard",
@@ -228,7 +233,7 @@
         "how": "Turns my project notes into progress bars and an activity heatmap.",
         "url": "https://projects.haphan.digital/",
         "confirm": false,
-        "source": "projects repo"
+        "source": "projects repo (kept from v1, not in new list)"
       }
     ]
   }

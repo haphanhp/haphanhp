@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// Assumption: the site is served at https://haphan.digital (change `site` if it is not).
+// Main site: https://haphan.digital (domain bought at Namecheap, deployed on Vercel).
+// Static output: Vercel serves it as-is, so no adapter is needed. DNS and secrets are configured outside this repo.
 export default defineConfig({
   site: 'https://haphan.digital',
   output: 'static',

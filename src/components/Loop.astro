@@ -1,57 +1,79 @@
 ---
-// A simple sketch of how the projects feed each other, drawn as an inline SVG loop.
-// Edit `nodes` to change the story. Colours come from CSS variables, so dark mode just works.
-const nodes = [
-  { icon: '🎤', name: 'Nói ra chữ', verb: 'speak' },
-  { icon: '🧠', name: '2ndbrain', verb: 'keep' },
-  { icon: '🪴', name: 'Digital Garden', verb: 'grow' },
-  { icon: '📒', name: 'Notes', verb: 'share' },
-  { icon: '🌙', name: 'Vượt Qua', verb: 'rest' },
+// "How these fit together": the real flow of my setup, drawn as inline SVG (two layouts: wide and narrow).
+// Edit `chain` / `side` to change the story. Colours come from CSS variables, so dark mode just works.
+const chain = [
+  { icon: '🔮', name: 'Obsidian', sub: 'my vault' },
+  { icon: '🕳️', name: 'Tailscale', sub: 'private tunnel' },
+  { icon: '🔗', name: 'n8n', sub: 'Docker · VPS' },
+  { icon: '✅', name: 'ClickUp', sub: 'tasks' },
 ];
-const cx = 300, cy = 190, R = 128, r = 30;
-const pts = nodes.map((n, i) => {
-  const a = (-90 + (360 / nodes.length) * i) * (Math.PI / 180);
-  return { ...n, x: cx + R * Math.cos(a), y: cy + R * Math.sin(a), a };
-});
-// curved edge from node i to i+1, trimmed so arrows stop at the circle edge
-const edges = pts.map((p, i) => {
-  const q = pts[(i + 1) % pts.length];
-  const dx = q.x - p.x, dy = q.y - p.y, d = Math.hypot(dx, dy);
-  const ux = dx / d, uy = dy / d;
-  const sx = p.x + ux * (r + 4), sy = p.y + uy * (r + 4);
-  const ex = q.x - ux * (r + 8), ey = q.y - uy * (r + 8);
-  const mx = (sx + ex) / 2 + (cx - (sx + ex) / 2) * -0.0, my = (sy + ey) / 2;
-  const nx = -uy, ny = ux; // bulge outward from the centre
-  const out = Math.sign((mx - cx) * nx + (my - cy) * ny) || 1;
-  const bx = mx + nx * 14 * out, by = my + ny * 14 * out;
-  const vx = mx + (cx - mx) * 0.16, vy = my + (cy - my) * 0.16 + 4;
-  return { vx, vy, d: `M ${sx.toFixed(1)} ${sy.toFixed(1)} Q ${bx.toFixed(1)} ${by.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}`, lx: bx, ly: by, verb: p.verb };
-});
+const hops = ['talks through', 'reaches', 'syncs with'];
+const side = { icon: '🧭', name: '9Router', sub: 'one endpoint, any model', hop: 'model calls' };
+const r = 34;
+
+// wide layout
+const W = { w: 780, h: 320, xs: [90, 290, 490, 690], y: 100 };
+// narrow layout
+const N = { w: 360, h: 640, x: 110, ys: [60, 210, 360, 510] };
 ---
 <section class="loop" aria-labelledby="fit">
   <h2 id="fit">🔄 How these fit together</h2>
   <figure>
-    <svg viewBox="0 0 600 400" role="img" aria-label="A loop: Nói ra chữ, 2ndbrain, Digital Garden, Notes, Vượt Qua, and back to Nói ra chữ">
+    <svg class="wide" viewBox={`0 0 ${W.w} ${W.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. 9Router sits beside the AI calls.">
       <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0 0 L10 5 L0 10 z" />
-        </marker>
+        <marker id="arrow-w" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" /></marker>
       </defs>
-      {edges.map((e) => <path class="edge draw" d={e.d} marker-end="url(#arrow)" />)}
-      {pts.map((p) => {
-        const ox = Math.cos(p.a), oy = Math.sin(p.a);
-        const anchor = ox > 0.3 ? 'start' : ox < -0.3 ? 'end' : 'middle';
-        return (
-          <g class="n">
-            <circle class="node" cx={p.x} cy={p.y} r={r} />
-            <text x={p.x} y={p.y + 7} text-anchor="middle" font-size="22">{p.icon}</text>
-            <text class="lbl" x={p.x + ox * (r + 10)} y={p.y + oy * (r + 10) + (oy < -0.3 ? -4 : oy > 0.3 ? 14 : 4)} style={`text-anchor:${anchor}`}>{p.name}</text>
-          </g>
-        );
-      })}
-      {edges.map((e) => <text class="verb" x={e.vx} y={e.vy}>{e.verb}</text>)}
-      <text class="lbl" x={cx} y={cy + 4} style="opacity:.7">slowly growing</text>
+      {hops.map((h, i) => (
+        <g>
+          <path class="edge draw" d={`M ${W.xs[i] + r + 6} ${W.y} L ${W.xs[i + 1] - r - 10} ${W.y}`} marker-end="url(#arrow-w)" />
+          <text class="verb" x={(W.xs[i] + W.xs[i + 1]) / 2} y={W.y - 12}>{h}</text>
+        </g>
+      ))}
+      {chain.map((n, i) => (
+        <g class="n">
+          <circle class="node" cx={W.xs[i]} cy={W.y} r={r} />
+          <text x={W.xs[i]} y={W.y + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <text class="lbl" x={W.xs[i]} y={W.y + r + 22}>{n.name}</text>
+          <text class="sub" x={W.xs[i]} y={W.y + r + 40}>{n.sub}</text>
+        </g>
+      ))}
+      <path class="edge" d={`M ${W.xs[2]} ${W.y + r + 50} L ${W.xs[2]} ${W.y + 122}`} marker-end="url(#arrow-w)" />
+      <text class="verb" x={W.xs[2] + 12} y={W.y + 100} style="text-anchor:start">{side.hop}</text>
+      <g class="n">
+        <circle class="node" cx={W.xs[2]} cy={W.y + 160} r={r} />
+        <text x={W.xs[2]} y={W.y + 168} text-anchor="middle" font-size="24">{side.icon}</text>
+        <text class="lbl" x={W.xs[2] + r + 14} y={W.y + 158} style="text-anchor:start">{side.name}</text>
+        <text class="sub" x={W.xs[2] + r + 14} y={W.y + 176} style="text-anchor:start">{side.sub}</text>
+      </g>
     </svg>
-    <figcaption>Speak it, keep it, grow it, share it, rest, and start again. (My own sketch of the loop, not a formal architecture.)</figcaption>
+
+    <svg class="narrow" viewBox={`0 0 ${N.w} ${N.h}`} role="img" aria-label="Obsidian talks through Tailscale to n8n on a VPS, which syncs with ClickUp. 9Router sits beside the AI calls.">
+      <defs>
+        <marker id="arrow-n" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" /></marker>
+      </defs>
+      {hops.map((h, i) => (
+        <g>
+          <path class="edge draw" d={`M ${N.x} ${N.ys[i] + r + 46} L ${N.x} ${N.ys[i + 1] - r - 10}`} marker-end="url(#arrow-n)" />
+          <text class="verb" x={N.x + 14} y={(N.ys[i] + r + 46 + N.ys[i + 1] - r - 10) / 2 + 4} style="text-anchor:start">{h}</text>
+        </g>
+      ))}
+      {chain.map((n, i) => (
+        <g class="n">
+          <circle class="node" cx={N.x} cy={N.ys[i]} r={r} />
+          <text x={N.x} y={N.ys[i] + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <text class="lbl" x={N.x} y={N.ys[i] + r + 20}>{n.name}</text>
+          <text class="sub" x={N.x} y={N.ys[i] + r + 36}>{n.sub}</text>
+        </g>
+      ))}
+      <path class="edge" d={`M ${N.x + r + 6} ${N.ys[2]} L ${N.x + 132} ${N.ys[2]}`} marker-end="url(#arrow-n)" />
+      <text class="verb" x={N.x + 88} y={N.ys[2] - 10}>{side.hop}</text>
+      <g class="n">
+        <circle class="node" cx={N.x + 172} cy={N.ys[2]} r={r} />
+        <text x={N.x + 172} y={N.ys[2] + 8} text-anchor="middle" font-size="24">{side.icon}</text>
+        <text class="lbl" x={N.x + 172} y={N.ys[2] + r + 20}>{side.name}</text>
+        <text class="sub" x={N.x + 172} y={N.ys[2] + r + 36}>one endpoint</text>
+      </g>
+    </svg>
+    <figcaption>Obsidian talks to n8n on my VPS through a private Tailscale tunnel, and n8n keeps ClickUp in sync. 9Router sits beside the AI calls. (My own sketch, not a formal architecture.)</figcaption>
   </figure>
 </section>

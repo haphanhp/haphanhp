@@ -33,9 +33,10 @@ const groups = [
                 {p.visibility === 'private' && <span class="badge">Private</span>}
               </h3>
               <p>{p.tagline}</p>
+              {p.note && <p class="note">🔨 {p.note}</p>}
               <div class="foot">
                 {p.metric && <span>{p.metric} · {p.metricDate}</span>}
-                {p.visibility === 'public' && p.repo && <a href={p.repo} target="_blank" rel="noopener">repo ↗</a>}
+                {p.repo && <a href={p.repo} target="_blank" rel="noopener">repo{p.visibility === 'private' ? ' (private)' : ''} ↗</a>}
               </div>
             </article>
           ))}

@@ -15,6 +15,7 @@ const projects = defineCollection({
       metricDate: z.string().optional(), // when the metric was measured, e.g. "2026-09-30"
       url: z.string().url().optional(), // live link
       repo: z.string().url().optional(), // hidden automatically when visibility is private
+      note: z.string().optional(), // short status note, e.g. "Currently building"
       icon: z.string(),
       order: z.number().default(99),
     })

@@ -80,6 +80,7 @@ h2 { font-size: 1.25rem; margin: 40px 0 6px; display: flex; align-items: center;
 .card h3 a:hover { color: var(--sage-deep); text-decoration: underline; }
 .card .icon { font-size: 1.3rem; }
 .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.card p.note { color: var(--rose-deep); font-family: var(--mono); font-size: 0.8rem; }
 .card .foot { margin-top: auto; padding-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
 .badge { font-family: var(--mono); font-size: 0.7rem; padding: 2px 9px; border-radius: 999px; background: var(--rose); color: var(--rose-deep); border: 1px solid transparent; }
 .badge.todo { background: transparent; border: 1px dashed var(--rose-deep); }
@@ -104,6 +105,9 @@ tr.unconfirmed td { outline: 1px dashed var(--rose-deep); outline-offset: -3px; 
 .loop .node { fill: var(--sage); stroke: var(--sage-deep); stroke-width: 1.5; transition: fill 0.2s; }
 .loop g.n:hover .node { fill: var(--rose); }
 .loop .lbl { fill: var(--ink); font-family: var(--mono); font-size: 13px; text-anchor: middle; }
+.loop .sub { fill: var(--muted); font-family: var(--mono); font-size: 11px; text-anchor: middle; }
+.loop svg.narrow { display: none; }
+@media (max-width: 640px) { .loop svg.wide { display: none; } .loop svg.narrow { display: block; max-width: 360px; margin: 0 auto; } }
 .loop .verb { fill: var(--rose-deep); font-family: var(--mono); font-size: 12px; text-anchor: middle; }
 .loop .edge { fill: none; stroke: var(--sage-deep); stroke-width: 1.6; stroke-dasharray: 5 5; }
 .loop .edge.draw { animation: dash 24s linear infinite; }

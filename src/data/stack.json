@@ -138,6 +138,48 @@
         "how": "A small always-on machine that keeps the workflows awake.",
         "confirm": false,
         "source": "user list ('VM'); assumed to be the VPS/GCP VM"
+      },
+      {
+        "slug": "clickup",
+        "icon": "✅",
+        "name": "ClickUp",
+        "how": "Where my tasks live; n8n keeps it in sync so I do not have to copy things by hand.",
+        "url": "https://clickup.com",
+        "confirm": false,
+        "source": "owner message"
+      }
+    ]
+  },
+  {
+    "group": "Networking & security",
+    "icon": "🔐",
+    "items": [
+      {
+        "slug": "tailscale",
+        "icon": "🕳️",
+        "name": "Tailscale",
+        "how": "Digs a private tunnel so my Obsidian plugin can talk straight to n8n on the VPS, no public doors left ajar.",
+        "url": "https://tailscale.com",
+        "confirm": false,
+        "source": "owner message"
+      },
+      {
+        "slug": "bitwarden",
+        "icon": "🗝️",
+        "name": "Bitwarden",
+        "how": "Keeps my everyday passwords, so my brain can stay busy with more important things, like noodles.",
+        "url": "https://bitwarden.com",
+        "confirm": false,
+        "source": "owner message"
+      },
+      {
+        "slug": "keepassxc",
+        "icon": "🔒",
+        "name": "KeePassXC",
+        "how": "The offline backup vault for client IDs, API tokens, PATs and other secrets.",
+        "url": "https://keepassxc.org",
+        "confirm": false,
+        "source": "owner message"
       }
     ]
   },

@@ -5,5 +5,4 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://haphanhp.github.io',
   output: 'static',
-  redirects: { '/': '/projects/' },
 });

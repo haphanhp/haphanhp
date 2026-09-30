@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// Linktree-style home. Everything comes from real data: the project files and a few fixed, real links.
+const projects = (await getCollection('projects')).map((e) => e.data).sort((a, b) => a.order - b.order);
+const fixed = [
+  { icon: '🎮', title: 'Projects', sub: 'What I am building and playing with', href: '/projects/' },
+  { icon: '🧰', title: 'Stack', sub: 'The tools I use, and how they fit together', href: '/stack/' },
+  { icon: '🌐', title: 'haphan.digital', sub: 'My main website', href: 'https://haphan.digital', external: true },
+  { logo: '/logos/github.svg', title: 'GitHub', sub: 'haphanhp', href: 'https://github.com/haphanhp', external: true },
+];
+const live = projects.filter((p) => p.url).map((p) => ({ icon: p.icon, title: p.name, sub: p.tagline, href: p.url, external: true }));
+const links = [...fixed, ...live];
+---
+<Base title="Home" description="Small, cozy things, slowly growing.">
+  <div class="home">
+    <img class="avatar" src="https://github.com/haphanhp.png?size=224" alt="haphanhp on GitHub" width="112" height="112" />
+    <h1>haphan</h1>
+    <div class="bio">
+      <p>🌱 A stray soul in a dry, code-heavy world, wandering into tech by accident and staying for the plants.</p>
+      <p>🎮 I build small, cozy things, just playing in the sandbox like a curious outsider with fresh eyes.</p>
+      <p>🌿 Soft, stubborn, and slowly growing.</p>
+      <p>✨ Innocence: uninstalled. Curiosity: still running.</p>
+    </div>
+    <ul class="links">
+      {links.map((l) => (
+        <li>
+          <a class="link-btn" href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}>
+            <span class="lb-icon" aria-hidden="true">{l.logo ? <img src={l.logo} alt="" /> : l.icon}</span>
+            <span>{l.title}<small>{l.sub}</small></span>
+            <span class="arrow" aria-hidden="true">{l.external ? '↗' : '→'}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>

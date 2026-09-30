@@ -43,12 +43,12 @@
     --glow: rgba(147, 201, 160, 0.65);
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; font-size: 110%; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 18px/1.65 var(--sans);
+  font: 1.125rem/1.65 var(--sans);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -113,8 +113,8 @@ table.stack { width: 100%; border-collapse: separate; border-spacing: 0; backgro
 table.stack td { padding: 16px 18px; vertical-align: top; border-top: 1px solid var(--line); }
 table.stack tr:first-child td { border-top: 0; }
 table.stack td.tool { width: 36%; font-weight: 600; font-size: 1.12rem; white-space: nowrap; }
-table.stack td.tool .icon { display: inline-block; width: 40px; margin-right: 12px; text-align: center; font-size: 1.5rem; vertical-align: middle; }
-table.stack td.tool .logo { display: inline-block; vertical-align: middle; width: 40px; height: 40px; padding: 6px; margin-right: 12px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+table.stack td.tool .icon { display: inline-block; width: 46px; margin-right: 12px; text-align: center; font-size: 1.5rem; vertical-align: middle; }
+table.stack td.tool .logo { display: inline-block; vertical-align: middle; width: 46px; height: 46px; padding: 7px; margin-right: 14px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
 table.stack td.tool a { color: var(--ink); text-decoration: none; }
 table.stack td.tool a:hover { color: var(--sage-deep); text-decoration: underline; }
 table.stack td.how { color: var(--muted); font-size: 1.05rem; }
@@ -128,12 +128,12 @@ tr.unconfirmed td { outline: 1px dashed var(--rose-deep); outline-offset: -3px; 
 .loop .node.brand { fill: #fff; }
 .loop .node { fill: var(--sage); stroke: var(--sage-deep); stroke-width: 1.5; transition: fill 0.2s; }
 .loop g.n:hover .node { fill: var(--rose); }
-.loop .lbl { fill: var(--ink); font-family: var(--mono); font-size: 16px; text-anchor: middle; }
-.loop .lane { fill: var(--rose-deep); font-family: var(--mono); font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
-.loop .sub { fill: var(--muted); font-family: var(--mono); font-size: 13px; text-anchor: middle; }
+.loop .lbl { fill: var(--ink); font-family: var(--mono); font-size: 18px; text-anchor: middle; }
+.loop .lane { fill: var(--rose-deep); font-family: var(--mono); font-size: 15.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+.loop .sub { fill: var(--muted); font-family: var(--mono); font-size: 14.5px; text-anchor: middle; }
 .loop svg.narrow { display: none; }
 @media (max-width: 640px) { .loop svg.wide { display: none; } .loop svg.narrow { display: block; max-width: 360px; margin: 0 auto; } }
-.loop .verb { fill: var(--rose-deep); font-family: var(--mono); font-size: 14px; text-anchor: middle; }
+.loop .verb { fill: var(--rose-deep); font-family: var(--mono); font-size: 15.5px; text-anchor: middle; }
 .loop .edge { fill: none; stroke: var(--sage-deep); stroke-width: 1.6; stroke-dasharray: 5 5; }
 .loop .edge.draw { animation: dash 24s linear infinite; }
 @keyframes dash { to { stroke-dashoffset: -400; } }
@@ -182,3 +182,10 @@ table.stack tr:hover td.tool .icon { transform: scale(1.28); filter: drop-shadow
 .link-btn .lb-icon:has(img) { background: #fff; border: 1px solid var(--line); }
 
 .home .link-section + .link-section { margin-top: 12px; }
+
+/* narrow diagram: keep labels inside the 360-wide canvas */
+.loop svg.narrow .lbl { font-size: 16px; }
+.loop svg.narrow .sub { font-size: 13px; }
+.loop svg.narrow .verb, .loop svg.narrow .lane { font-size: 14px; }
+.brand { white-space: nowrap; }
+@media (max-width: 480px) { .site-header { flex-wrap: wrap; row-gap: 8px; } .site-header nav a { padding: 4px 9px; font-size: 0.92rem; } }

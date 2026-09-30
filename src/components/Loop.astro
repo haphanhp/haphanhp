@@ -15,12 +15,12 @@ const ai = [
   { icon: '🧠', name: 'Many models', sub: 'quota hops' },
 ];
 const aiHops = ['runs through', 'reaches'];
-const r = 34;
+const r = 40;
 
 // wide layout
-const W = { w: 780, h: 380, xs: [90, 290, 490, 690], y: 100, ay: 290, axs: [90, 290, 490] };
+const W = { w: 780, h: 400, xs: [90, 290, 490, 690], y: 100, ay: 305, axs: [90, 290, 490] };
 // narrow layout
-const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 180, 300] };
+const N = { w: 360, h: 870, x: 110, ys: [60, 230, 400, 570], ay: 745, axs: [60, 180, 300] };
 ---
 <section class="loop" aria-labelledby="fit">
   <h2 id="fit">🔄 How these fit together</h2>
@@ -38,9 +38,9 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       {chain.map((n, i) => (
         <g class="n">
           <circle class={n.logo ? "node brand" : "node"} cx={W.xs[i]} cy={W.y} r={r} />
-          {n.logo ? <image href={n.logo} x={W.xs[i] - 17} y={W.y - 17} width="34" height="34" /> : <text x={W.xs[i]} y={W.y + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
-          <text class="lbl" x={W.xs[i]} y={W.y + r + 22}>{n.name}</text>
-          <text class="sub" x={W.xs[i]} y={W.y + r + 40}>{n.sub}</text>
+          {n.logo ? <image href={n.logo} x={W.xs[i] - 24} y={W.y - 24} width="48" height="48" /> : <text x={W.xs[i]} y={W.y + 10} text-anchor="middle" font-size="30">{n.icon}</text>}
+          <text class="lbl" x={W.xs[i]} y={W.y + r + 26}>{n.name}</text>
+          <text class="sub" x={W.xs[i]} y={W.y + r + 46}>{n.sub}</text>
         </g>
       ))}
       <text class="lane" x="20" y={W.ay - 58}>the AI side</text>
@@ -53,9 +53,9 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       {ai.map((n, i) => (
         <g class="n">
           <circle class={n.logo ? "node brand" : "node"} cx={W.axs[i]} cy={W.ay} r={r} />
-          {n.logo ? <image href={n.logo} x={W.axs[i] - 17} y={W.ay - 17} width="34" height="34" /> : <text x={W.axs[i]} y={W.ay + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
-          <text class="lbl" x={W.axs[i]} y={W.ay + r + 22}>{n.name}</text>
-          <text class="sub" x={W.axs[i]} y={W.ay + r + 40}>{n.sub}</text>
+          {n.logo ? <image href={n.logo} x={W.axs[i] - 24} y={W.ay - 24} width="48" height="48" /> : <text x={W.axs[i]} y={W.ay + 10} text-anchor="middle" font-size="30">{n.icon}</text>}
+          <text class="lbl" x={W.axs[i]} y={W.ay + r + 26}>{n.name}</text>
+          <text class="sub" x={W.axs[i]} y={W.ay + r + 46}>{n.sub}</text>
         </g>
       ))}
     </svg>
@@ -73,7 +73,7 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       {chain.map((n, i) => (
         <g class="n">
           <circle class={n.logo ? "node brand" : "node"} cx={N.x} cy={N.ys[i]} r={r} />
-          {n.logo ? <image href={n.logo} x={N.x - 17} y={N.ys[i] - 17} width="34" height="34" /> : <text x={N.x} y={N.ys[i] + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
+          {n.logo ? <image href={n.logo} x={N.x - 24} y={N.ys[i] - 24} width="48" height="48" /> : <text x={N.x} y={N.ys[i] + 8} text-anchor="middle" font-size="30">{n.icon}</text>}
           <text class="lbl" x={N.x} y={N.ys[i] + r + 20}>{n.name}</text>
           <text class="sub" x={N.x} y={N.ys[i] + r + 36}>{n.sub}</text>
         </g>
@@ -85,7 +85,7 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       {ai.map((n, i) => (
         <g class="n">
           <circle class={n.logo ? "node brand" : "node"} cx={N.axs[i]} cy={N.ay} r={r - 4} />
-          {n.logo ? <image href={n.logo} x={N.axs[i] - 15} y={N.ay - 15} width="30" height="30" /> : <text x={N.axs[i]} y={N.ay + 8} text-anchor="middle" font-size="22">{n.icon}</text>}
+          {n.logo ? <image href={n.logo} x={N.axs[i] - 21} y={N.ay - 21} width="42" height="42" /> : <text x={N.axs[i]} y={N.ay + 8} text-anchor="middle" font-size="26">{n.icon}</text>}
           <text class="lbl" x={N.axs[i]} y={N.ay + r + 16}>{n.name}</text>
           <text class="sub" x={N.axs[i]} y={N.ay + r + 32}>{n.sub}</text>
         </g>

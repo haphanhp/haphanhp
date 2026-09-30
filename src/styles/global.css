@@ -92,6 +92,7 @@ table.stack td { padding: 12px 16px; vertical-align: top; border-top: 1px solid 
 table.stack tr:first-child td { border-top: 0; }
 table.stack td.tool { width: 34%; font-weight: 600; white-space: nowrap; }
 table.stack td.tool .icon { display: inline-block; width: 1.6em; }
+table.stack td.tool .logo { display: inline-block; vertical-align: middle; width: 24px; height: 24px; padding: 3px; margin-right: 8px; object-fit: contain; background: #fff; border: 1px solid var(--line); border-radius: 7px; }
 table.stack td.tool a { color: var(--ink); text-decoration: none; }
 table.stack td.tool a:hover { color: var(--sage-deep); text-decoration: underline; }
 table.stack td.how { color: var(--muted); }
@@ -102,6 +103,7 @@ tr.unconfirmed td { outline: 1px dashed var(--rose-deep); outline-offset: -3px; 
 .loop figure { margin: 12px 0 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); }
 .loop svg { width: 100%; height: auto; display: block; }
 .loop figcaption { color: var(--muted); font-size: 0.88rem; padding: 6px 10px 2px; }
+.loop .node.brand { fill: #fff; }
 .loop .node { fill: var(--sage); stroke: var(--sage-deep); stroke-width: 1.5; transition: fill 0.2s; }
 .loop g.n:hover .node { fill: var(--rose); }
 .loop .lbl { fill: var(--ink); font-family: var(--mono); font-size: 13px; text-anchor: middle; }

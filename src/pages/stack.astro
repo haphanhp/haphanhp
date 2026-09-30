@@ -32,7 +32,7 @@ const groups = stack
           {g.items.map((i) => (
             <tr class={i.confirm ? 'unconfirmed' : undefined}>
               <td class="tool">
-                <span class="icon" aria-hidden="true">{i.icon}</span>
+                {i.logo ? <img class="logo" src={i.logo} alt="" width="22" height="22" /> : <span class="icon" aria-hidden="true">{i.icon}</span>}
                 {i.url ? <a href={withUtm(i.url, i.slug)} target="_blank" rel="noopener">{i.name}</a> : i.name}
                 {i.confirm && <span class="badge todo"> to confirm</span>}
               </td>

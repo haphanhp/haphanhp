@@ -1,17 +1,27 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
-// Linktree-style home. Everything comes from real data: the project files and a few fixed, real links.
-const projects = (await getCollection('projects')).map((e) => e.data).sort((a, b) => a.order - b.order);
-const fixed = [
+// Linktree-style home. Every link is a real URL supplied by the owner.
+const site = [
   { icon: '🎮', title: 'Projects', sub: 'What I am building and playing with', href: '/projects/' },
   { icon: '🧰', title: 'Stack', sub: 'The tools I use, and how they fit together', href: '/stack/' },
   { icon: '🌐', title: 'haphan.digital', sub: 'My main website', href: 'https://haphan.digital', external: true },
   { logo: '/logos/github.svg', title: 'GitHub', sub: 'haphanhp', href: 'https://github.com/haphanhp', external: true },
 ];
-const live = projects.filter((p) => p.url).map((p) => ({ icon: p.icon, title: p.name, sub: p.tagline, href: p.url, external: true }));
-const links = [...fixed, ...live];
+const connect = [
+  { logo: '/logos/whatsapp.svg', title: 'WhatsApp', sub: 'Say hi', href: 'https://api.whatsapp.com/send?phone=84979433762&text=I%20saw%20your%20WhatsApp%20number%20and%20I%20would%20like%20to%20connect', external: true },
+  { icon: '💬', title: 'Testimonials', sub: 'senja.io', href: 'https://senja.io/p/haphan/WPMu8HK', external: true },
+];
+const support = [
+  { logo: '/logos/kofi.svg', title: 'Ko-fi', sub: 'ko-fi.com/haphanhp', href: 'https://ko-fi.com/haphanhp', external: true },
+  { logo: '/logos/paypal.svg', title: 'PayPal', sub: 'paypal.me/haphanvn', href: 'https://www.paypal.com/paypalme/haphanvn', external: true },
+  { logo: '/logos/buymeacoffee.svg', title: 'Buy Me a Coffee', sub: 'buymeacoffee.com/baohavnasia', href: 'https://www.buymeacoffee.com/baohavnasia', external: true },
+];
+const sections = [
+  { title: 'Say hi', links: connect },
+  { title: 'Support', links: support },
+  { title: 'Around', links: site },
+];
 ---
 <Base title="Home" description="Small, cozy things, slowly growing.">
   <div class="home">
@@ -23,16 +33,21 @@ const links = [...fixed, ...live];
       <p>🌿 Soft, stubborn, and slowly growing.</p>
       <p>✨ Innocence: uninstalled. Curiosity: still running.</p>
     </div>
-    <ul class="links">
-      {links.map((l) => (
-        <li>
-          <a class="link-btn" href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}>
-            <span class="lb-icon" aria-hidden="true">{l.logo ? <img src={l.logo} alt="" /> : l.icon}</span>
-            <span>{l.title}<small>{l.sub}</small></span>
-            <span class="arrow" aria-hidden="true">{l.external ? '↗' : '→'}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
+    {sections.map((sec) => (
+      <section class="link-section">
+        <h2>{sec.title}</h2>
+        <ul class="links">
+          {sec.links.map((l) => (
+            <li>
+              <a class="link-btn" href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener' } : {})}>
+                <span class="lb-icon" aria-hidden="true">{l.logo ? <img src={l.logo} alt="" /> : l.icon}</span>
+                <span>{l.title}<small>{l.sub}</small></span>
+                <span class="arrow" aria-hidden="true">{l.external ? '↗' : '→'}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
   </div>
 </Base>

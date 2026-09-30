@@ -30,7 +30,6 @@ const groups = [
               <h3>
                 <span class="icon" aria-hidden="true">{p.icon}</span>
                 {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.name}</a> : <span>{p.name}</span>}
-                {p.visibility === 'private' && <span class="badge">Private</span>}
               </h3>
               <p>{p.tagline}</p>
               {p.note && <p class="note">🔨 {p.note}</p>}

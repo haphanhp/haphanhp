@@ -25,7 +25,7 @@ const path = Astro.url.pathname;
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/projects/"><span class="sprout" aria-hidden="true">🌱</span> haphan</a>
+      <a class="brand" href="https://haphan.digital" rel="noopener" title="haphan.digital"><span class="sprout" aria-hidden="true">🌱</span> haphan</a>
       <nav aria-label="Main">
         {nav.map((n) => (
           <a href={`/${n.slug}/`} aria-current={path.startsWith(`/${n.slug}`) ? 'page' : undefined}>{n.label}</a>

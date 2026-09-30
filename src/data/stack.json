@@ -10,7 +10,8 @@
         "how": "The strategist: it thinks about the big picture and plans the next move while I nod wisely.",
         "url": "https://claude.com/claude-code",
         "confirm": false,
-        "source": "owner message: strategist role"
+        "source": "owner message: strategist role",
+        "logo": "/logos/claude-code.svg"
       },
       {
         "slug": "cline",
@@ -19,7 +20,8 @@
         "how": "The muscle-bound builder inside VS Code: hunts through folders, edits files and tidies up the mess while I supervise.",
         "url": "https://cline.bot",
         "confirm": false,
-        "source": "owner message: muscle role"
+        "source": "owner message: muscle role",
+        "logo": "/logos/cline.svg"
       },
       {
         "slug": "cursor",
@@ -28,7 +30,8 @@
         "how": "Still on a first date with it, mostly to see if it keeps a project's context tidy.",
         "url": "https://cursor.com",
         "confirm": true,
-        "source": "vault note: trial only"
+        "source": "vault note: trial only",
+        "logo": "/logos/cursor.svg"
       }
     ]
   },
@@ -43,7 +46,8 @@
         "how": "One endpoint that keeps Cline running on many models, completely free, so I get more done without watching the meter.",
         "confirm": false,
         "source": "owner message + URL",
-        "url": "https://github.com/decolua/9router"
+        "url": "https://github.com/decolua/9router",
+        "logo": "/logos/9router.svg"
       }
     ]
   },
@@ -70,10 +74,11 @@
         "slug": "astro",
         "icon": "🚀",
         "name": "Astro",
-        "how": "Grows this site from Markdown files, one small page at a time.",
+        "how": "Builds the pages of this site from Markdown files, one small page at a time.",
         "url": "https://astro.build",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/astro.svg"
       }
     ]
   },
@@ -88,7 +93,8 @@
         "how": "Home of my vault: thousands of notes, tagged, linked and only slightly overgrown.",
         "url": "https://obsidian.md",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/obsidian.svg"
       },
       {
         "slug": "quartz",
@@ -97,7 +103,8 @@
         "how": "Turns part of the vault into 2ndbrain, so my second brain gets a front door.",
         "url": "https://quartz.jzhao.xyz",
         "confirm": false,
-        "source": "user list (2ndbrain)"
+        "source": "user list (2ndbrain)",
+        "logo": "/logos/quartz.png"
       },
       {
         "slug": "eleventy",
@@ -106,7 +113,8 @@
         "how": "Waters the Digital Garden: plain files go in, tidy pages come out.",
         "url": "https://www.11ty.dev",
         "confirm": false,
-        "source": "user list (Digital Garden)"
+        "source": "user list (Digital Garden)",
+        "logo": "/logos/eleventy.svg"
       }
     ]
   },
@@ -121,7 +129,8 @@
         "how": "Self-hosted on a VPS with Docker, quietly doing the chores while I pretend to be productive.",
         "url": "https://n8n.io",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/n8n.svg"
       },
       {
         "slug": "google-cloud",
@@ -130,11 +139,12 @@
         "how": "The cloud I visit when my laptop needs a break.",
         "url": "https://cloud.google.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/googlecloud.svg"
       },
       {
         "slug": "vm",
-        "icon": "🖲️",
+        "icon": "🖥️",
         "name": "VM",
         "how": "A small always-on machine that keeps the workflows awake.",
         "confirm": false,
@@ -147,7 +157,8 @@
         "how": "Where my tasks live; n8n keeps it in sync so I do not have to copy things by hand.",
         "url": "https://clickup.com",
         "confirm": false,
-        "source": "owner message"
+        "source": "owner message",
+        "logo": "/logos/clickup.svg"
       }
     ]
   },
@@ -162,7 +173,8 @@
         "how": "Digs a private tunnel so my Obsidian plugin can talk straight to n8n on the VPS, no public doors left ajar.",
         "url": "https://tailscale.com",
         "confirm": false,
-        "source": "owner message"
+        "source": "owner message",
+        "logo": "/logos/tailscale.svg"
       },
       {
         "slug": "bitwarden",
@@ -171,7 +183,8 @@
         "how": "Keeps my everyday passwords, so my brain can stay busy with more important things, like noodles.",
         "url": "https://bitwarden.com",
         "confirm": false,
-        "source": "owner message"
+        "source": "owner message",
+        "logo": "/logos/bitwarden.svg"
       },
       {
         "slug": "keepassxc",
@@ -180,7 +193,8 @@
         "how": "The offline backup vault for client IDs, API tokens, PATs and other secrets.",
         "url": "https://keepassxc.org",
         "confirm": false,
-        "source": "owner message"
+        "source": "owner message",
+        "logo": "/logos/keepassxc.svg"
       }
     ]
   },
@@ -192,10 +206,11 @@
         "slug": "vercel",
         "icon": "▲",
         "name": "Vercel",
-        "how": "Ships my small apps and this site with one push and no ceremony.",
+        "how": "Ships my small apps with one push and no ceremony.",
         "url": "https://vercel.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/vercel.svg"
       },
       {
         "slug": "netlify",
@@ -204,16 +219,18 @@
         "how": "Ships the projects dashboard and its little functions, so the heatmap can bloom.",
         "url": "https://www.netlify.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/netlify.svg"
       },
       {
         "slug": "github-pages",
         "icon": "📄",
         "name": "GitHub Pages",
-        "how": "The no-fuss static host for pages that just want to exist.",
+        "how": "Hosts this site, a no-fuss home for pages that just want to exist.",
         "url": "https://pages.github.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/github.svg"
       },
       {
         "slug": "namecheap",
@@ -222,7 +239,8 @@
         "how": "Where I bought haphan.digital, the address of the whole garden.",
         "url": "https://www.namecheap.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/namecheap.svg"
       }
     ]
   },
@@ -237,7 +255,8 @@
         "how": "My pick for the backend when a small app needs a database.",
         "url": "https://supabase.com",
         "confirm": false,
-        "source": "user list"
+        "source": "user list",
+        "logo": "/logos/supabase.svg"
       }
     ]
   },
@@ -252,7 +271,8 @@
         "how": "Where I sketch a first version of an interface before refining it.",
         "url": "https://lovable.dev",
         "confirm": true,
-        "source": "vault note only"
+        "source": "vault note only",
+        "logo": "/logos/lovable.svg"
       }
     ]
   },
@@ -267,7 +287,8 @@
         "how": "Dictate Vietnamese and paste the text anywhere.",
         "url": "https://speech-to-text-iota-black.vercel.app/",
         "confirm": false,
-        "source": "speech-to-text repo (kept from v1, not in new list)"
+        "source": "speech-to-text repo (kept from v1, not in new list)",
+        "logo": "/logos/noi-ra-chu.png"
       },
       {
         "slug": "project-dashboard",

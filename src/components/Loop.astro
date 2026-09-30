@@ -2,16 +2,16 @@
 // "How these fit together": the real flow of my setup, drawn as inline SVG (two layouts: wide and narrow).
 // Edit `chain` / `side` to change the story. Colours come from CSS variables, so dark mode just works.
 const chain = [
-  { icon: '🔮', name: 'Obsidian', sub: 'my vault' },
-  { icon: '🕳️', name: 'Tailscale', sub: 'private tunnel' },
-  { icon: '🔗', name: 'n8n', sub: 'Docker · VPS' },
-  { icon: '✅', name: 'ClickUp', sub: 'tasks' },
+  { icon: '🔮', name: 'Obsidian', logo: '/logos/obsidian.svg', sub: 'my vault' },
+  { icon: '🕳️', name: 'Tailscale', logo: '/logos/tailscale.svg', sub: 'private tunnel' },
+  { icon: '🔗', name: 'n8n', logo: '/logos/n8n.svg', sub: 'Docker · VPS' },
+  { icon: '✅', name: 'ClickUp', logo: '/logos/clickup.svg', sub: 'tasks' },
 ];
 const hops = ['talks through', 'reaches', 'syncs with'];
 // the AI side: a separate lane, not part of the n8n chain
 const ai = [
-  { icon: '🛰️', name: 'Cline', sub: 'in VS Code' },
-  { icon: '🧭', name: '9Router', sub: 'one endpoint' },
+  { icon: '🛰️', name: 'Cline', logo: '/logos/cline.svg', sub: 'in VS Code' },
+  { icon: '🧭', name: '9Router', logo: '/logos/9router.svg', sub: 'one endpoint' },
   { icon: '🧠', name: 'Many models', sub: 'quota hops' },
 ];
 const aiHops = ['runs through', 'reaches'];
@@ -37,8 +37,8 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       ))}
       {chain.map((n, i) => (
         <g class="n">
-          <circle class="node" cx={W.xs[i]} cy={W.y} r={r} />
-          <text x={W.xs[i]} y={W.y + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <circle class={n.logo ? "node brand" : "node"} cx={W.xs[i]} cy={W.y} r={r} />
+          {n.logo ? <image href={n.logo} x={W.xs[i] - 17} y={W.y - 17} width="34" height="34" /> : <text x={W.xs[i]} y={W.y + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
           <text class="lbl" x={W.xs[i]} y={W.y + r + 22}>{n.name}</text>
           <text class="sub" x={W.xs[i]} y={W.y + r + 40}>{n.sub}</text>
         </g>
@@ -52,8 +52,8 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       ))}
       {ai.map((n, i) => (
         <g class="n">
-          <circle class="node" cx={W.axs[i]} cy={W.ay} r={r} />
-          <text x={W.axs[i]} y={W.ay + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <circle class={n.logo ? "node brand" : "node"} cx={W.axs[i]} cy={W.ay} r={r} />
+          {n.logo ? <image href={n.logo} x={W.axs[i] - 17} y={W.ay - 17} width="34" height="34" /> : <text x={W.axs[i]} y={W.ay + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
           <text class="lbl" x={W.axs[i]} y={W.ay + r + 22}>{n.name}</text>
           <text class="sub" x={W.axs[i]} y={W.ay + r + 40}>{n.sub}</text>
         </g>
@@ -72,8 +72,8 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       ))}
       {chain.map((n, i) => (
         <g class="n">
-          <circle class="node" cx={N.x} cy={N.ys[i]} r={r} />
-          <text x={N.x} y={N.ys[i] + 8} text-anchor="middle" font-size="24">{n.icon}</text>
+          <circle class={n.logo ? "node brand" : "node"} cx={N.x} cy={N.ys[i]} r={r} />
+          {n.logo ? <image href={n.logo} x={N.x - 17} y={N.ys[i] - 17} width="34" height="34" /> : <text x={N.x} y={N.ys[i] + 8} text-anchor="middle" font-size="24">{n.icon}</text>}
           <text class="lbl" x={N.x} y={N.ys[i] + r + 20}>{n.name}</text>
           <text class="sub" x={N.x} y={N.ys[i] + r + 36}>{n.sub}</text>
         </g>
@@ -84,8 +84,8 @@ const N = { w: 360, h: 780, x: 110, ys: [60, 210, 360, 510], ay: 675, axs: [60, 
       ))}
       {ai.map((n, i) => (
         <g class="n">
-          <circle class="node" cx={N.axs[i]} cy={N.ay} r={r - 4} />
-          <text x={N.axs[i]} y={N.ay + 8} text-anchor="middle" font-size="22">{n.icon}</text>
+          <circle class={n.logo ? "node brand" : "node"} cx={N.axs[i]} cy={N.ay} r={r - 4} />
+          {n.logo ? <image href={n.logo} x={N.axs[i] - 15} y={N.ay - 15} width="30" height="30" /> : <text x={N.axs[i]} y={N.ay + 8} text-anchor="middle" font-size="22">{n.icon}</text>}
           <text class="lbl" x={N.axs[i]} y={N.ay + r + 16}>{n.name}</text>
           <text class="sub" x={N.axs[i]} y={N.ay + r + 32}>{n.sub}</text>
         </g>

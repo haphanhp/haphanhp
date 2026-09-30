@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const all = (await getCollection('projects')).map((e) => e.data).sort((a, b) => a.order - b.order);
+const groups = [
+  { key: 'growing', icon: '🌱', title: 'Growing', note: 'Being built right now.' },
+  { key: 'playable', icon: '🎮', title: 'Playable', note: 'Running, and ready to play with.' },
+  { key: 'sleeping', icon: '💤', title: 'Sleeping', note: 'Resting for now.' },
+] as const;
+---
+<Base title="Projects" description="Small, cozy things I build.">
+  <h1>Projects</h1>
+  <div class="bio">
+    <p>🌱 A stray soul in a dry, code-heavy world, wandering into tech by accident and staying for the plants.</p>
+    <p>🎮 I build small, cozy things, just playing in the sandbox like a curious outsider with fresh eyes.</p>
+    <p>🌿 Soft, stubborn, and slowly growing.</p>
+    <p>✨ Innocence: uninstalled. Curiosity: still running.</p>
+  </div>
+
+  {groups.map((g) => {
+    const items = all.filter((p) => p.status === g.key);
+    return items.length === 0 ? null : (
+      <section>
+        <h2>{g.icon} {g.title}</h2>
+        <p class="group-note">{g.note}</p>
+        <div class="grid">
+          {items.map((p) => (
+            <article class="card">
+              <h3>
+                <span class="icon" aria-hidden="true">{p.icon}</span>
+                {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.name}</a> : <span>{p.name}</span>}
+                {p.visibility === 'private' && <span class="badge">Private</span>}
+              </h3>
+              <p>{p.tagline}</p>
+              {p.note && <p class="note">🔨 {p.note}</p>}
+              <div class="foot">
+                {p.metric && <span>{p.metric} · {p.metricDate}</span>}
+                {p.repo && <a href={p.repo} target="_blank" rel="noopener">repo{p.visibility === 'private' ? ' (private)' : ''} ↗</a>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  })}
+</Base>

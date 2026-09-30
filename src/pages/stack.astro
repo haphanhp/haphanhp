@@ -1,0 +1,48 @@
+---
+import stack from '../data/stack.json';
+import Base from '../layouts/Base.astro';
+import Loop from '../components/Loop.astro';
+
+// Items with `confirm: true` have not been verified by the owner yet.
+// They are hidden in production builds; set PUBLIC_SHOW_UNCONFIRMED=true (or run `astro dev`) to preview them.
+const showUnconfirmed = import.meta.env.DEV || import.meta.env.PUBLIC_SHOW_UNCONFIRMED === 'true';
+
+const withUtm = (url: string, slug: string) => {
+  const u = new URL(url);
+  u.searchParams.set('utm_source', 'haphan.digital');
+  u.searchParams.set('utm_medium', 'referral');
+  u.searchParams.set('utm_campaign', 'stack');
+  u.searchParams.set('utm_content', slug);
+  return u.toString();
+};
+
+const groups = stack
+  .map((g) => ({ ...g, items: g.items.filter((i) => showUnconfirmed || !i.confirm) }))
+  .filter((g) => g.items.length > 0);
+---
+<Base title="Stack" description="The tools I use to build, publish and keep my garden growing.">
+  <h1>Stack</h1>
+  <p class="lede">The tools I use to build, publish and keep my garden growing.</p>
+
+  {groups.map((g) => (
+    <section class="stack-group">
+      <h2>{g.icon} {g.group}</h2>
+      <table class="stack">
+        <tbody>
+          {g.items.map((i) => (
+            <tr class={i.confirm ? 'unconfirmed' : undefined}>
+              <td class="tool">
+                <span class="icon" aria-hidden="true">{i.icon}</span>
+                {i.url ? <a href={withUtm(i.url, i.slug)} target="_blank" rel="noopener">{i.name}</a> : i.name}
+                {i.confirm && <span class="badge todo"> to confirm</span>}
+              </td>
+              <td class="how">{i.how}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  ))}
+
+  <Loop />
+</Base>

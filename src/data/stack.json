@@ -1,0 +1,283 @@
+[
+  {
+    "group": "Coding agents",
+    "icon": "🤖",
+    "items": [
+      {
+        "slug": "claude-code",
+        "icon": "🤖",
+        "name": "Claude Code",
+        "how": "The strategist: it thinks about the big picture and plans the next move while I nod wisely.",
+        "url": "https://claude.com/claude-code",
+        "confirm": false,
+        "source": "owner message: strategist role"
+      },
+      {
+        "slug": "cline",
+        "icon": "🛰️",
+        "name": "Cline",
+        "how": "The muscle-bound builder inside VS Code: hunts through folders, edits files and tidies up the mess while I supervise.",
+        "url": "https://cline.bot",
+        "confirm": false,
+        "source": "owner message: muscle role"
+      },
+      {
+        "slug": "cursor",
+        "icon": "⌨️",
+        "name": "Cursor",
+        "how": "Still on a first date with it, mostly to see if it keeps a project's context tidy.",
+        "url": "https://cursor.com",
+        "confirm": true,
+        "source": "vault note: trial only"
+      }
+    ]
+  },
+  {
+    "group": "AI routing",
+    "icon": "🚦",
+    "items": [
+      {
+        "slug": "9router",
+        "icon": "🧭",
+        "name": "9Router",
+        "how": "One endpoint that keeps Cline running on many models, completely free, so I get more done without watching the meter.",
+        "confirm": false,
+        "source": "owner message + URL",
+        "url": "https://github.com/decolua/9router"
+      }
+    ]
+  },
+  {
+    "group": "Editors & terminal",
+    "icon": "🖥️",
+    "items": [
+      {
+        "slug": "vscode",
+        "icon": "🖥️",
+        "name": "VS Code",
+        "how": "Where I edit code and config files.",
+        "url": "https://code.visualstudio.com",
+        "confirm": true,
+        "source": "only seen as a taskbar icon; not in the new list"
+      }
+    ]
+  },
+  {
+    "group": "Languages & frameworks",
+    "icon": "🧩",
+    "items": [
+      {
+        "slug": "astro",
+        "icon": "🚀",
+        "name": "Astro",
+        "how": "Grows this site from Markdown files, one small page at a time.",
+        "url": "https://astro.build",
+        "confirm": false,
+        "source": "user list"
+      }
+    ]
+  },
+  {
+    "group": "Notes & knowledge",
+    "icon": "📚",
+    "items": [
+      {
+        "slug": "obsidian",
+        "icon": "🔮",
+        "name": "Obsidian",
+        "how": "Home of my vault: thousands of notes, tagged, linked and only slightly overgrown.",
+        "url": "https://obsidian.md",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "quartz",
+        "icon": "🌿",
+        "name": "Quartz",
+        "how": "Turns part of the vault into 2ndbrain, so my second brain gets a front door.",
+        "url": "https://quartz.jzhao.xyz",
+        "confirm": false,
+        "source": "user list (2ndbrain)"
+      },
+      {
+        "slug": "eleventy",
+        "icon": "🪴",
+        "name": "Eleventy",
+        "how": "Waters the Digital Garden: plain files go in, tidy pages come out.",
+        "url": "https://www.11ty.dev",
+        "confirm": false,
+        "source": "user list (Digital Garden)"
+      }
+    ]
+  },
+  {
+    "group": "Automation",
+    "icon": "⚙️",
+    "items": [
+      {
+        "slug": "n8n",
+        "icon": "🔗",
+        "name": "n8n",
+        "how": "Self-hosted on a VPS with Docker, quietly doing the chores while I pretend to be productive.",
+        "url": "https://n8n.io",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "google-cloud",
+        "icon": "☁️",
+        "name": "Google Cloud",
+        "how": "The cloud I visit when my laptop needs a break.",
+        "url": "https://cloud.google.com",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "vm",
+        "icon": "🖲️",
+        "name": "VM",
+        "how": "A small always-on machine that keeps the workflows awake.",
+        "confirm": false,
+        "source": "user list ('VM'); assumed to be the VPS/GCP VM"
+      },
+      {
+        "slug": "clickup",
+        "icon": "✅",
+        "name": "ClickUp",
+        "how": "Where my tasks live; n8n keeps it in sync so I do not have to copy things by hand.",
+        "url": "https://clickup.com",
+        "confirm": false,
+        "source": "owner message"
+      }
+    ]
+  },
+  {
+    "group": "Networking & security",
+    "icon": "🔐",
+    "items": [
+      {
+        "slug": "tailscale",
+        "icon": "🕳️",
+        "name": "Tailscale",
+        "how": "Digs a private tunnel so my Obsidian plugin can talk straight to n8n on the VPS, no public doors left ajar.",
+        "url": "https://tailscale.com",
+        "confirm": false,
+        "source": "owner message"
+      },
+      {
+        "slug": "bitwarden",
+        "icon": "🗝️",
+        "name": "Bitwarden",
+        "how": "Keeps my everyday passwords, so my brain can stay busy with more important things, like noodles.",
+        "url": "https://bitwarden.com",
+        "confirm": false,
+        "source": "owner message"
+      },
+      {
+        "slug": "keepassxc",
+        "icon": "🔒",
+        "name": "KeePassXC",
+        "how": "The offline backup vault for client IDs, API tokens, PATs and other secrets.",
+        "url": "https://keepassxc.org",
+        "confirm": false,
+        "source": "owner message"
+      }
+    ]
+  },
+  {
+    "group": "Hosting & delivery",
+    "icon": "🚚",
+    "items": [
+      {
+        "slug": "vercel",
+        "icon": "▲",
+        "name": "Vercel",
+        "how": "Ships my small apps and this site with one push and no ceremony.",
+        "url": "https://vercel.com",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "netlify",
+        "icon": "🌐",
+        "name": "Netlify",
+        "how": "Ships the projects dashboard and its little functions, so the heatmap can bloom.",
+        "url": "https://www.netlify.com",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "github-pages",
+        "icon": "📄",
+        "name": "GitHub Pages",
+        "how": "The no-fuss static host for pages that just want to exist.",
+        "url": "https://pages.github.com",
+        "confirm": false,
+        "source": "user list"
+      },
+      {
+        "slug": "namecheap",
+        "icon": "🏷️",
+        "name": "Namecheap",
+        "how": "Where I bought haphan.digital, the address of the whole garden.",
+        "url": "https://www.namecheap.com",
+        "confirm": false,
+        "source": "user list"
+      }
+    ]
+  },
+  {
+    "group": "Data & storage",
+    "icon": "🗄️",
+    "items": [
+      {
+        "slug": "supabase",
+        "icon": "🗄️",
+        "name": "Supabase",
+        "how": "My pick for the backend when a small app needs a database.",
+        "url": "https://supabase.com",
+        "confirm": false,
+        "source": "user list"
+      }
+    ]
+  },
+  {
+    "group": "Design & content",
+    "icon": "🎨",
+    "items": [
+      {
+        "slug": "lovable",
+        "icon": "💗",
+        "name": "Lovable",
+        "how": "Where I sketch a first version of an interface before refining it.",
+        "url": "https://lovable.dev",
+        "confirm": true,
+        "source": "vault note only"
+      }
+    ]
+  },
+  {
+    "group": "Tools I built",
+    "icon": "🛠️",
+    "items": [
+      {
+        "slug": "noi-ra-chu",
+        "icon": "🎤",
+        "name": "Nói ra chữ",
+        "how": "Dictate Vietnamese and paste the text anywhere.",
+        "url": "https://speech-to-text-iota-black.vercel.app/",
+        "confirm": false,
+        "source": "speech-to-text repo (kept from v1, not in new list)"
+      },
+      {
+        "slug": "project-dashboard",
+        "icon": "📈",
+        "name": "Project dashboard",
+        "how": "Turns my project notes into progress bars and an activity heatmap.",
+        "url": "https://projects.haphan.digital/",
+        "confirm": false,
+        "source": "projects repo (kept from v1, not in new list)"
+      }
+    ]
+  }
+]

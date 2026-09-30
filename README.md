@@ -15,3 +15,6 @@
 | **Nói ra chữ** | Speak Vietnamese and the text is copied to your clipboard. An installable web app (PWA) built on the Web Speech API. | [Live](https://speech-to-text-iota-black.vercel.app/) | [GitHub](https://github.com/haphanhp/speech-to-text) |
 | **Vượt Qua** | An app to break the habit of endless micro-dramas and win your attention back. | [Live](https://vuot-qua.vercel.app/) | [GitHub](https://github.com/haphanhp/vuot-qua) |
 | **Notes** | Collected resources and useful information I have gathered and put together. | [Live](https://notes.haphan.digital/) | [GitHub](https://github.com/haphanhp/publish) (private) |
+| **Places** | Manage places and itineraries, connected to the Google Maps APIs. Currently building. | In progress | [GitHub](https://github.com/haphanhp/places) (private) |
+
+<sub>📍 Saigon · [All projects](https://haphan.digital/projects/) · [Stack](https://haphan.digital/stack/)</sub>

@@ -1,22 +1,16 @@
-### Xin chào, tôi là Hà Phan
+🌱 A stray soul in a dry, code-heavy world, wandering into tech by accident and staying for the plants.  
+🎮 I build small, cozy things, just playing in the sandbox like a curious outsider with fresh eyes.  
+🌿  Soft, stubborn, and slowly growing.  
+📚 Fueled by books, movies, night-owl matches, and a very serious love of noodle 🍜  
+✨ Innocence: uninstalled. Curiosity: still running.
 
-Tôi xây dựng các công cụ để quản lý tri thức, tự động hóa công việc lặp lại và tiết kiệm sự chú ý.
+🌐 [haphan.digital](https://haphan.digital)
 
-[haphan.digital](https://haphan.digital) · [Tất cả dự án](https://projects.haphan.digital) · [Bài viết và nghiên cứu](https://notes.haphan.digital)
+### Projects
 
-### Dự án
-
-| Dự án | Mô tả | Demo | Mã nguồn |
+| Project | What it is | Demo | Source |
 |---|---|---|---|
-| **2ndbrain** | Second brain: truy cập kho ghi chú và tri thức cá nhân của tôi. | [Xem demo](https://2ndbrain.haphan.digital/) | [GitHub](https://github.com/haphanhp/2ndbrain) |
-| **Digital Garden** | Khu vườn số: ghi chú và ý tưởng được nối với nhau, lớn dần theo thời gian thay vì đăng như bài blog hoàn chỉnh. | [Xem demo](https://garden.haphan.digital/) | [GitHub](https://github.com/haphanhp/hadigitalgarden) |
-| **Nói ra chữ** | Nói tiếng Việt, chữ tự copy vào clipboard. Ứng dụng web cài được (PWA), dùng Web Speech API có sẵn trong Chrome/Edge. | [Xem demo](https://speech-to-text-iota-black.vercel.app/) | [GitHub](https://github.com/haphanhp/speech-to-text) |
-| **Vượt Qua** | Ứng dụng giúp bỏ nghiện phim ngắn và lấy lại sự tập trung. | [Xem demo](https://vuot-qua.vercel.app/) | [GitHub](https://github.com/haphanhp/vuot-qua) |
-
-### Đang xây
-
-| Dự án | Mô tả | Demo |
-|---|---|---|
-| **Automation** | Biến các việc lặp lại thành chuỗi tự động (n8n). | [Xem](https://n8n.haphan.digital/) |
-
-<sub>Danh sách đầy đủ và tiến độ từng dự án: [projects.haphan.digital](https://projects.haphan.digital)</sub>
+| **2ndbrain** | A second brain: access to my personal notes and knowledge. | [Live](https://2ndbrain.haphan.digital/) | [GitHub](https://github.com/haphanhp/2ndbrain) |
+| **Digital Garden** | Notes and ideas that are planted, linked and grown over time, rather than published as finished blog posts. | [Live](https://garden.haphan.digital/) | [GitHub](https://github.com/haphanhp/hadigitalgarden) |
+| **Nói ra chữ** | Speak Vietnamese and the text is copied to your clipboard. An installable web app (PWA) built on the Web Speech API. | [Live](https://speech-to-text-iota-black.vercel.app/) | [GitHub](https://github.com/haphanhp/speech-to-text) |
+| **Vượt Qua** | An app to break the habit of endless micro-dramas and win your attention back. | [Live](https://vuot-qua.vercel.app/) | [GitHub](https://github.com/haphanhp/vuot-qua) |

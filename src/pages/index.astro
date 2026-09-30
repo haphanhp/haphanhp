@@ -2,25 +2,28 @@
 import Base from '../layouts/Base.astro';
 
 // Linktree-style home. Every link is a real URL supplied by the owner.
-const site = [
+const explore = [
   { icon: '🎮', title: 'Projects', sub: 'What I am building and playing with', href: '/projects/' },
   { icon: '🧰', title: 'Stack', sub: 'The tools I use, and how they fit together', href: '/stack/' },
   { icon: '🌐', title: 'haphan.digital', sub: 'My main website', href: 'https://haphan.digital', external: true },
   { logo: '/logos/github.svg', title: 'GitHub', sub: 'haphanhp', href: 'https://github.com/haphanhp', external: true },
 ];
-const connect = [
+const proof = [
+  { icon: '❤️', title: 'Testimonials', sub: 'senja.io', href: 'https://senja.io/p/haphan/WPMu8HK', external: true },
+];
+const sayHi = [
   { logo: '/logos/whatsapp.svg', title: 'WhatsApp', sub: 'Say hi', href: 'https://api.whatsapp.com/send?phone=84979433762&text=I%20saw%20your%20WhatsApp%20number%20and%20I%20would%20like%20to%20connect', external: true },
-  { icon: '💬', title: 'Testimonials', sub: 'senja.io', href: 'https://senja.io/p/haphan/WPMu8HK', external: true },
 ];
 const support = [
   { logo: '/logos/kofi.svg', title: 'Ko-fi', sub: 'ko-fi.com/haphanhp', href: 'https://ko-fi.com/haphanhp', external: true },
   { logo: '/logos/paypal.svg', title: 'PayPal', sub: 'paypal.me/haphanvn', href: 'https://www.paypal.com/paypalme/haphanvn', external: true },
-  { logo: '/logos/buymeacoffee.svg', title: 'Buy Me a Coffee', sub: 'buymeacoffee.com/baohavnasia', href: 'https://www.buymeacoffee.com/baohavnasia', external: true },
 ];
+// Order: my work first, then proof, then contact, then support last.
 const sections = [
-  { title: 'Say hi', links: connect },
+  { title: 'Explore', links: explore },
+  { title: '', links: proof },
+  { title: 'Say hi', links: sayHi },
   { title: 'Support', links: support },
-  { title: 'Around', links: site },
 ];
 ---
 <Base title="Home" description="Small, cozy things, slowly growing.">
@@ -35,7 +38,7 @@ const sections = [
     </div>
     {sections.map((sec) => (
       <section class="link-section">
-        <h2>{sec.title}</h2>
+        {sec.title && <h2>{sec.title}</h2>}
         <ul class="links">
           {sec.links.map((l) => (
             <li>

@@ -16,6 +16,6 @@
 | **Vượt Qua** | An app to break the habit of endless micro-dramas and win your attention back. | [Live](https://vuot-qua.vercel.app/) | [GitHub](https://github.com/haphanhp/vuot-qua) |
 | **Notes** | Collected resources and useful information I have gathered and put together. | [Live](https://notes.haphan.digital/) | [GitHub](https://github.com/haphanhp/publish) (private) |
 | **Places** | Manage places and itineraries, connected to the Google Maps APIs. Currently building. | In progress | [GitHub](https://github.com/haphanhp/places) (private) |
-| **Projects** |Turns my project notes into progress bars and an activity heatmap, automation sync from obsidian vault.| [Live](https://projects.haphan.digital/)  | [GitHub](https://github.com/haphanhp/projects) (private) |
+| **Projects** |Turns my project notes into progress bars and an activity heatmap, automation sync from obsidian vault. API deepseek arrange tasks with Kanban and Gantt chart, sync with Google calendar OAuth | [Live](https://projects.haphan.digital/)  | [GitHub](https://github.com/haphanhp/projects) (private) |
 
 <sub>📍 Saigon, Vietnam <img src="assets/flag-vn.png" alt="Vietnam flag" height="12"> · [All projects](https://haphanhp.github.io/projects/) · [Stack](https://haphanhp.github.io/stack/)</sub>
